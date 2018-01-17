@@ -41,6 +41,13 @@ if ( ! function_exists( 'magazine_saga_posted_on' ) ) :
 
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
+		$categories_list = get_the_category_list( esc_html__( ', ', 'magazine-saga' ) );
+		if ( $categories_list ) {
+			/* translators: 1: list of categories. */
+			printf( '<span class="cat-links">' . esc_html__( ', in: %1$s', 'magazine-saga' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+		
+
 	}
 endif;
 
@@ -55,7 +62,7 @@ if ( ! function_exists( 'magazine_saga_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'magazine-saga' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Published in %1$s', 'magazine-saga' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				//printf( '<span class="cat-links">' . esc_html__( 'Published in %1$s', 'magazine-saga' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */

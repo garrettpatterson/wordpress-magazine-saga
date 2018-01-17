@@ -47,6 +47,7 @@ if ( ! function_exists( 'magazine_saga_setup' ) ) :
 			'topbar-menu' => esc_html__( 'Top Bar Menu', 'magazine-saga' ),
 			'menu-1' => esc_html__( 'Primary', 'magazine-saga' ),
 			'social-nav' => esc_html__( 'Social Nav', 'magazine-saga' ),
+			'social-nav-1'=>esc_html__('Social Nav Main Menu','magazine-saga')
 		) );
 
 		/*

@@ -687,6 +687,7 @@ a:active {
     top: 0;
     width: 100%;
     z-index: 9999;
+	display: hidden;
 }
 
 .loader-inner {
@@ -761,6 +762,11 @@ a:active {
     line-height: 45px;
     height: 45px;
     text-transform: uppercase;
+}
+
+.saga-navigation ul > li > a {
+	height: 60px;
+	line-height: 60px;
 }
 
 .saga-midnav {
@@ -3148,6 +3154,14 @@ input[type="submit"],
     float: left;
 }
 
+.saga-navigation .social-icons{
+	float: right;
+}
+
+div.menu.col-md-8{
+	padding-left: 0px;
+}
+
 .social-icons ul {
     list-style: none;
     padding-left: 0;
@@ -3184,6 +3198,19 @@ input[type="submit"],
     text-align: center;
 }
 
+.saga-navigation .social-icons ul li a:after,
+.saga-navigation .widget .social-widget-menu ul a:before {
+    vertical-align: middle;
+    width: 45px;
+    float: left;
+    height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+
 .widget .social-widget-menu ul a:before {
     border-radius: 100%;
     -webkit-border-radius: 100%;
@@ -3193,7 +3220,9 @@ input[type="submit"],
 }
 
 .saga-topnav .social-icons ul li:hover a:after,
-.saga-topnav .social-icons ul li:focus a:after {
+.saga-topnav .social-icons ul li:focus a:after,
+.saga-navigation .social-icons ul li:hover a:after,
+.saga-navigation .social-icons ul li:focus a:after{
     background: #464646;
 }
 
@@ -3245,6 +3274,12 @@ input[type="submit"],
 .social-icons ul a[href*="twitter.com"]:after,
 .widget .social-widget-menu ul a[href*="twitter.com"]:before {
     content: "\f243";
+}
+
+
+.social-icons ul a[href*="github.com"]:after,
+.widget .social-widget-menu ul a[href*="github.com"]:before {
+    content: "\f233";
 }
 
 .social-icons ul a[href*="linkedin.com"]:after,

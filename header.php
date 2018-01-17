@@ -20,7 +20,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'magazine-saga'); ?></a>
-
+	<!--
     <div id="loader" class="loader">
         <div class="loader-inner">
             <span id="loader-typed"></span>
@@ -30,6 +30,7 @@
             </div>
         </div>
     </div>
+   -->
     <?php
     $header_image = get_template_directory_uri().'/assets/images/header-banner.jpg';
     $dynamic_header_image = get_header_image();
@@ -178,8 +179,26 @@
                     'theme_location' => 'menu-1',
                     'menu_id' => 'primary-menu',
                     'container' => 'div',
-                    'container_class' => 'menu'
+                    'container_class' => 'menu col-md-8'
                 )); ?>
+                
+                
+                	<div class="col-md-4">
+                		<div class="social-icons">
+                                <?php
+                                wp_nav_menu( array(
+                                        'theme_location' => 'social-nav-1',
+                                        'link_before' => '<span class="screen-reader-text">',
+                                        'link_after' => '</span>',
+                                        'menu_id' => 'social-menu',
+                                        'fallback_cb' => false,
+                                        'depth'        => 1,
+                                        'menu_class'=> false
+                                    )
+                                );
+                                ?>
+                		</div>
+                	</div>
                 </nav><!-- #site-navigation -->
             </div>
         </div>
@@ -204,6 +223,59 @@
         if ( is_active_sidebar('home-page-col-one') || is_active_sidebar('home-page-col-two') ){
             echo '<div id="content" class="site-content">';
         }
+		
+		?>
+		<!-- start popular posts trending hack -->
+		                    <section class="section-block section-trend">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="saga-title-wrapper saga-title-wrapper-1">
+                                        <h2 class="saga-title">
+                                            <span class="primary-background">
+                                               Most Popular
+                                            </span>
+                                        </h2>
+                                    </div>
+                                </div>
+     
+                                <?php
+								$args = array(
+								'wpp_start'=>'<span>',
+								'wpp_end'=>'</span>',
+								'limit' => 3,
+								    'post_html' =>'<div class="col-md-4 col-sm-4">
+                                        <div class="trending-item-content primary-background border-overlay">
+                                            <a href="{url}" class="bg-image bg-image-1 bg-opacity">
+     
+                                                <img class="trending-post-img" src="{img_url}">
+                                                <!--
+                                                thumb: {thumb}
+												thumb_img: {thumb_img}
+												thumb_Url: {thumb_url}
+												image: {image}
+												img_url: {img_url}
+												-->
+                                                
+                                            </a>
+                                            <div class="post-content border-overlay-content">
+                                                <div class="post-cat primary-font">
+                                                    {category} 
+                                                </div>
+                                                <h2 class="entry-title entry-title-1">
+                                                    <a href="{url}">{title}</a>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>');
+                                    wpp_get_mostpopular( $args );
+                                    ?>
+
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end popular posts trending hack -->
+		<?php
     }else{
         /**
          * Hook - magazine_saga_inner_header.
