@@ -226,7 +226,11 @@
 		
 		?>
 		<!-- start popular posts trending hack -->
-		                    <section class="section-block section-trend">
+		                    
+     
+                                <?php
+								$args = array(
+								'wpp_start'=>'<section class="section-block section-trend">
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -237,12 +241,8 @@
                                             </span>
                                         </h2>
                                     </div>
-                                </div>
-     
-                                <?php
-								$args = array(
-								'wpp_start'=>'<span>',
-								'wpp_end'=>'</span>',
+                                </div>',
+								'wpp_end'=>' </div></div></section>',
 								'limit' => 3,
 								    'post_html' =>'<div class="col-md-4 col-sm-4">
                                         <div class="trending-item-content primary-background border-overlay">
@@ -271,9 +271,7 @@
                                     wpp_get_mostpopular( $args );
                                     ?>
 
-                            </div>
-                        </div>
-                    </section>
+                           
                     <!-- end popular posts trending hack -->
 		<?php
     }else{
