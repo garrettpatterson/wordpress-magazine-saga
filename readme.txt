@@ -1,6 +1,6 @@
-=== Magazine Saga ===
+=== Magazine Saga (GP Custom) ===
 
-Contributors: ThemeSaga
+Contributors: ThemeSaga, Garrett Patterson
 
 Requires at least: 4.0
 Tested up to: 4.9.1
@@ -100,6 +100,8 @@ Source: https://fonts.google.com/specimen/Libre+Franklin
 License: Open Font License
 
 == Changelog ==
+= 1.0.5 - Jan 25 2018 = 
+=GP Customizations=
 
 = 1.0.4 - Jan 4 2018 =
 =Bug Fixes=
