@@ -1856,7 +1856,7 @@ header.nav-affix .saga-navigation {
 #primary,
 .home-primary-sidebar {
     padding-left: 0;
-    width: 66.66%;
+    width: 70%;
 }
 
 .no-sidebar #primary,
@@ -1868,7 +1868,7 @@ header.nav-affix .saga-navigation {
 
 #secondary,
 .home-secondary-sidebar {
-    width: 33.33%;
+    width: 30%;
     padding-right: 0;
 }
 
@@ -2222,12 +2222,23 @@ body .saga-slider .owl-dots {
     .slide-text-wrapper h2 {
         font-size: 32px;
     }
+    
+    
+	.saga-navigation .social-icons, .social-icons {
+    	float: left;
+	}
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .saga-slider {
         width: 400px;
     }
+    
+    .saga-navigation .social-icons, .social-icons {
+    	float: left;
+	}
+
 }
 
 .bg-image {
