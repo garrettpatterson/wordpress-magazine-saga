@@ -10,10 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if( !is_singular() ): ?>
+    <!-- content.php -->
+    <?php 
+    $header_tag = "h1";
+	if(!is_singular()){
+		$header_tag = "h2";
+	}
+	?>
+  
         <header class="entry-header">
             <?php
-            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+            the_title( '<'.$header_tag.' class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></'.$header_tag.'>' );
             if ( 'post' === get_post_type() ) : ?>
             <div class="entry-meta">
                 <?php magazine_saga_posted_on(); ?>
@@ -21,7 +28,7 @@
             <?php
             endif; ?>
         </header><!-- .entry-header -->
-    <?php endif;?>
+    
 
 	<div class="entry-content">
 		<?php
